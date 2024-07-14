@@ -7,7 +7,8 @@ import publicRoutes from './routes/public.js';
 import dbConnect from './db/mongodb.js';
 import auth from './middleware/auth.js';
 import getUserProfile from './routes/userRoutes.js';
-
+import commentsRouter from "./routes/comments.js"; 
+import allCommentsRouter from './routes/all-comments.js'
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,8 @@ app.use('/api/auth', authRoutes);
 app.use('/quiz',auth, quizRoutes);  // Add the new quiz routes
 app.use('/api/public', publicRoutes);  // Add the new public routes
 app.get('/profile', auth, getUserProfile);
+app.use("/api/comments",auth, commentsRouter);
+app.use("/api/all-comments",allCommentsRouter);
 
 const PORT = process.env.PORT || 5000;
 

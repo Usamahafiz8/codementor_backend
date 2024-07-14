@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Route to store quiz details for a user
 router.post("/store", async (req, res) => {
-  const { userId,  score } = req.body;
+  const {  score } = req.body;
 
   // Validate the request body
   if ( score === undefined) {
