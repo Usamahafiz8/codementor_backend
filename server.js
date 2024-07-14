@@ -16,7 +16,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
-app.use('/quiz', quizRoutes);  // Add the new quiz routes
+app.use('/quiz',auth, quizRoutes);  // Add the new quiz routes
 app.use('/api/public', publicRoutes);  // Add the new public routes
 app.get('/profile', auth, getUserProfile);
 

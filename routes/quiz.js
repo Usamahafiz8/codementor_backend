@@ -10,12 +10,12 @@ router.post("/store", async (req, res) => {
   const { userId,  score } = req.body;
 
   // Validate the request body
-  if (!userId ||  score === undefined) {
+  if ( score === undefined) {
     return res.status(400).json({ message: "Invalid request data" });
   }
 
   try {
-    const user = await User.findById(userId);
+    const user = await User.findById(req.user.userId)
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
