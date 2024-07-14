@@ -2,7 +2,6 @@
 import mongoose from 'mongoose';
 
 const QuizRecordSchema = new mongoose.Schema({
-    quizId: { type: mongoose.Schema.Types.ObjectId, ref: 'Quiz', required: true },
     score: { type: Number, required: true },
     timestamp: { type: Date, default: Date.now }
 });
