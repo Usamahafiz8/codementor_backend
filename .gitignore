@@ -9,7 +9,6 @@ node_modules/
 .idea/
 
 # Environment variables
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -30,3 +29,4 @@ __next-image-loader/
 
 # Optional: Uncomment if using TypeScript
 # *.tsbuildinfo
+config.bat
